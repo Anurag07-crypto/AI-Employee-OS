@@ -1,0 +1,363 @@
+2026-05-12 12:41:27 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 12:41:27 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 12:42:41 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 12:42:42 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 12:44:39 | INFO     | AGENTS.Research_agent | Websearch Generated
+2026-05-12 12:47:12 | INFO     | AGENTS.Coding_agent | Code Explainer response generated
+2026-05-12 12:48:02 | ERROR    | backend | Unexpected error in /server: 'Request' object has no attribute 'thread_id'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 66, in server
+    "thread_id": request.thread_id
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\pydantic\main.py", line 1042, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'Request' object has no attribute 'thread_id'
+2026-05-12 13:05:36 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 13:05:36 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 13:06:17 | INFO     | AGENTS.Research_agent | Websearch Generated
+2026-05-12 13:11:05 | ERROR    | backend | Unexpected error in /server: 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 49, in server
+    response = selected_agent(request.query)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\Research_agent.py", line 93, in QA_based_search
+    final_response = "\n\n".join([q["content"] for q in response["results"]]) if response.get("results") else ""
+                                                                                 ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2026-05-12 13:16:21 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 13:16:21 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 13:16:46 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 13:16:47 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 13:17:31 | ERROR    | backend | Unexpected error in /server: 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 49, in server
+    response = selected_agent(request.query)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\Research_agent.py", line 93, in QA_based_search
+    if not response:
+                     
+AttributeError: 'str' object has no attribute 'get'
+2026-05-12 13:26:13 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 13:26:13 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 13:26:40 | ERROR    | AGENTS.Research_agent | Error in QA_based_search: 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\Research_agent.py", line 96, in QA_based_search
+    results = response.get("results", [])
+              ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2026-05-12 13:29:51 | ERROR    | AGENTS.Research_agent | Error in QA_based_search: 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\Research_agent.py", line 96, in QA_based_search
+    return response
+          ^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2026-05-12 13:30:24 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 13:43:35 | ERROR    | backend | Approval error: 'decisions'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 133, in approve
+    response = email_agent.invoke(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain\agents\middleware\human_in_the_loop.py", line 362, in after_model
+    decisions = interrupt(hitl_request)["decisions"]
+                ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'decisions'
+During task with name 'HumanInTheLoopMiddleware.after_model' and id 'b10fdae7-03c3-7623-f48f-37e5195869ae'
+2026-05-12 13:43:44 | ERROR    | backend | Approval error: 'decisions'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 121, in approve
+    response = email_agent.invoke(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain\agents\middleware\human_in_the_loop.py", line 362, in after_model
+    decisions = interrupt(hitl_request)["decisions"]
+                ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'decisions'
+During task with name 'HumanInTheLoopMiddleware.after_model' and id 'b10fdae7-03c3-7623-f48f-37e5195869ae'
+2026-05-12 13:47:54 | INFO     | AGENTS.Email_agent | Generating email for query: I am writing to inform you that I will be taking a leave of absence from work for 6 days due to some personal issues. I apologize for any inconvenience this may cause and will make sure to catch up on any missed work as soon as possible. Thank you for your understanding.
+2026-05-12 13:47:54 | INFO     | AGENTS.Email_agent | Sending email to: anuragbusiness819@gmail.com
+2026-05-12 13:47:54 | INFO     | AGENTS.Email_agent | Invoking LLM to generate email...
+2026-05-12 13:47:55 | INFO     | AGENTS.Email_agent | Connecting to Gmail SMTP server...
+2026-05-12 13:47:55 | INFO     | AGENTS.Email_agent | Starting TLS...
+2026-05-12 13:47:56 | INFO     | AGENTS.Email_agent | Logging in as gameranurag24@gmail.com...
+2026-05-12 13:47:57 | INFO     | AGENTS.Email_agent | Sending email to anuragbusiness819@gmail.com...
+2026-05-12 19:04:55 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:04:55 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:04:56 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:04:57 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:04:58 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:04:59 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:00 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:01 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:02 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:02 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:03 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:04 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:05 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:05 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:06 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:07 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:08 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:09 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:15 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:22 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:29 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:37 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:45 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:05:53 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:06:01 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:06:10 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:06:19 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:06:29 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:06:39 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:06:49 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:06:59 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:07:10 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:07:20 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:07:31 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:07:43 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:07:55 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:08:07 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:08:19 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:08:32 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:08:45 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:08:58 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:09:12 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:09:25 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:09:39 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:09:55 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:10:08 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:10:23 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:10:38 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:10:54 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:11:10 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:11:26 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:11:42 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:11:58 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:12:15 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-12 19:12:16 | ERROR    | backend | Unexpected error in /server: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kanct82vfyg99f8ty7qkxwbh` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99529, Requested 3447. Please try again in 42m51.264s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 50, in server
+    response = selected_agent(request.query)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\DEFAULT_agent.py", line 98, in get_response
+    response = graph.invoke(
+               ^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\DEFAULT_agent.py", line 74, in Normal_agent
+    response = llm_with_tools.invoke(state["messages"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 5753, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 472, in invoke
+    self.generate_prompt(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1752, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1559, in generate
+    self._generate_with_cache(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1899, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain_groq\chat_models.py", line 621, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kanct82vfyg99f8ty7qkxwbh` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99529, Requested 3447. Please try again in 42m51.264s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+During task with name 'normal_agent' and id 'f9eaf3a4-104d-91bd-30de-4863826fdc14'
+2026-05-12 19:25:21 | ERROR    | backend | Unexpected error in /server: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kanct82vfyg99f8ty7qkxwbh` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98620, Requested 3445. Please try again in 29m44.16s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 50, in server
+    response = selected_agent(request.query)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\DEFAULT_agent.py", line 98, in get_response
+    response = graph.invoke(
+               ^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\DEFAULT_agent.py", line 74, in Normal_agent
+    response = llm_with_tools.invoke(state["messages"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 5753, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 472, in invoke
+    self.generate_prompt(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1752, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1559, in generate
+    self._generate_with_cache(
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1899, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\langchain_groq\chat_models.py", line 621, in _generate
+    response = self.client.create(messages=message_dicts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\.venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kanct82vfyg99f8ty7qkxwbh` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98620, Requested 3445. Please try again in 29m44.16s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+During task with name 'normal_agent' and id '76f64149-7f3c-398c-5c42-f4a18bbb78a9'
+2026-05-12 19:26:19 | INFO     | AGENTS.Coding_agent | Code Reviewer response generated
+2026-05-12 19:37:19 | INFO     | AGENTS.Email_agent | Generating email for query: Dear Vijay Kumar, I am interested in buying some home furniture and other goods for my home. Could you please provide me with some options and prices? I would appreciate your help in this matter. Best regards, Anurag Kumar
+2026-05-12 19:37:19 | INFO     | AGENTS.Email_agent | Sending email to: svijay201287@gmail.com
+2026-05-12 19:37:19 | INFO     | AGENTS.Email_agent | Invoking LLM to generate email...
+2026-05-12 19:37:19 | INFO     | AGENTS.Email_agent | Connecting to Gmail SMTP server...
+2026-05-12 19:37:22 | INFO     | AGENTS.Email_agent | Starting TLS...
+2026-05-12 19:37:23 | INFO     | AGENTS.Email_agent | Logging in as gameranurag24@gmail.com...
+2026-05-12 19:37:23 | INFO     | AGENTS.Email_agent | Sending email to svijay201287@gmail.com...
+2026-05-12 19:39:01 | INFO     | AGENTS.Research_agent | String response generated
+2026-05-12 19:39:47 | ERROR    | backend | Unexpected error in /server: 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 50, in server
+    response = selected_agent(request.query)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\Research_agent.py", line 67, in deepsearch_agent
+    final_response = "\n\n".join(
+                     ^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\Research_agent.py", line 68, in <genexpr>
+    item.get("content", "")
+    ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2026-05-13 11:30:19 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-13 11:30:20 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-13 11:33:47 | INFO     | AGENTS.TALKATIVE_agent | Transcription generated successfully
+2026-05-13 11:33:49 | INFO     | AGENTS.TALKATIVE_agent | tts_response streamed successfully
+2026-05-13 11:33:49 | ERROR    | backend | Talkative agent error: 'BinaryAPIResponse' object has no attribute 'stream_to_file'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 125, in talkative
+    result = Talkie(str(upload_path)).friend()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\TALKATIVE_agent.py", line 77, in friend
+    tts_response.stream_to_file(speech_file_path)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BinaryAPIResponse' object has no attribute 'stream_to_file'
+2026-05-13 11:36:01 | INFO     | AGENTS.TALKATIVE_agent | Transcription generated successfully
+2026-05-13 11:36:03 | INFO     | AGENTS.TALKATIVE_agent | tts_response streamed successfully
+2026-05-13 11:36:03 | ERROR    | backend | Talkative agent error: 'BinaryAPIResponse' object has no attribute 'stream_to_file'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 125, in talkative
+    result = Talkie(str(upload_path)).friend()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\TALKATIVE_agent.py", line 77, in friend
+AttributeError: 'BinaryAPIResponse' object has no attribute 'stream_to_file'
+2026-05-13 11:36:16 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-13 11:36:36 | INFO     | AGENTS.TALKATIVE_agent | Transcription generated successfully
+2026-05-13 11:36:38 | INFO     | AGENTS.TALKATIVE_agent | tts_response streamed successfully
+2026-05-13 11:36:38 | ERROR    | backend | Talkative agent error: 'BinaryAPIResponse' object has no attribute 'stream_to_file'
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 125, in talkative
+    result = Talkie(str(upload_path)).friend()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\AI_emp\AGENTS\TALKATIVE_agent.py", line 77, in friend
+AttributeError: 'BinaryAPIResponse' object has no attribute 'stream_to_file'
+2026-05-13 11:42:27 | ERROR    | BACKEND_SERVER.backend | Unexpected error in /server: 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 56, in server
+    response = selected_agent(request.query)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\AGENTS\Research_agent.py", line 67, in deepsearch_agent
+    final_response = "\n\n".join(
+                     ^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\AGENTS\Research_agent.py", line 68, in <genexpr>
+    item.get("content", "")
+    ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2026-05-13 11:43:29 | ERROR    | BACKEND_SERVER.backend | Unexpected error in /server: 'str' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\AI_emp\BACKEND_SERVER\backend.py", line 56, in server
+    response = selected_agent(request.query)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\AGENTS\Research_agent.py", line 67, in deepsearch_agent
+    final_response = "\n\n".join(
+                     ^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Desktop\AI_emp\AGENTS\Research_agent.py", line 68, in <genexpr>
+    item.get("content", "")
+    ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2026-05-13 11:43:42 | INFO     | AGENTS.Research_agent | Websearch Generated
+2026-05-13 11:44:25 | INFO     | AGENTS.TALKATIVE_agent | Transcription generated successfully
+2026-05-13 11:44:26 | INFO     | AGENTS.TALKATIVE_agent | tts_response generated successfully
+2026-05-13 11:48:57 | INFO     | AGENTS.DEFAULT_agent | Normal agent response generated
+2026-05-13 11:49:14 | INFO     | AGENTS.Research_agent | Websearch Generated
+2026-05-13 11:54:13 | INFO     | AGENTS.Research_agent | String response generated
+2026-05-13 11:58:07 | INFO     | AGENTS.Email_agent | Generating email for query: Hello Anurag Kumar, this is Cute. I urgently need the meeting links. Could you please send them to me as soon as possible? I appreciate your prompt response. Best regards, Cute
+2026-05-13 11:58:07 | INFO     | AGENTS.Email_agent | Sending email to: anuragbusiness819@gmail.com
+2026-05-13 11:58:07 | INFO     | AGENTS.Email_agent | Invoking LLM to generate email...
+2026-05-13 11:58:07 | INFO     | AGENTS.Email_agent | Connecting to Gmail SMTP server...
+2026-05-13 11:58:08 | INFO     | AGENTS.Email_agent | Starting TLS...
+2026-05-13 11:58:08 | INFO     | AGENTS.Email_agent | Logging in as gameranurag24@gmail.com...
+2026-05-13 11:58:09 | INFO     | AGENTS.Email_agent | Sending email to anuragbusiness819@gmail.com...
+2026-05-13 11:59:31 | INFO     | AGENTS.TALKATIVE_agent | Transcription generated successfully
+2026-05-13 11:59:33 | INFO     | AGENTS.TALKATIVE_agent | tts_response generated successfully
+2026-05-13 12:00:06 | INFO     | AGENTS.TALKATIVE_agent | Transcription generated successfully
+2026-05-13 12:00:08 | INFO     | AGENTS.TALKATIVE_agent | tts_response generated successfully
